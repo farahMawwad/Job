@@ -109,9 +109,15 @@ JobSchema.statics.deletejob = async function (id) {
   return true
 };
 JobSchema.statics.editjob = async function (id,newedite) {
-  console.log(id)
   console.log(newedite)
-  const job = await this.updateOne({ _id: id })
+  const { job_title, job_level, due_date, start_date, job_description } = newedite;
+  const job = await this.updateOne({ _id: id ,
+    job_title,
+    job_level,
+    due_date,
+    start_date,
+    job_description,
+  })
   return true
 };
 
