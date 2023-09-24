@@ -37,8 +37,8 @@ exports.login = async (req, res) => {
       try {
         res.status(200).json( await Jobs.view());
       } catch (error) {
-        console.error("An error occurred:", error); // Log the error for debugging
-        res.status(500).json({ error: error.message }); // Respond with an error status and message
+        console.error("An error occurred:", error); 
+        res.status(500).json({ error: error.message }); 
       }
     };
     exports.add_employee = async (req, res) => {
@@ -65,7 +65,7 @@ exports.login = async (req, res) => {
       try {
         console.log('farah awwad')
         const id =req.params.id
-   const newedite =req.params.edit
+   const newedite =req.body
         res.status(200).json( await Jobs.editjob(id,newedite));
       } catch (error) {
         console.error("An error occurred:", error); // Log the error for debugging
